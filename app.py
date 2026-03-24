@@ -368,7 +368,7 @@ def logout():
 # ===============================
 # RUN
 # ===============================
-if __name__ == "__main__":
+def init_db():
     db = get_db()
     db.execute("""
         CREATE TABLE IF NOT EXISTS users(
@@ -382,4 +382,8 @@ if __name__ == "__main__":
     db.commit()
     db.close()
 
+# Call it ALWAYS (important for Render)
+init_db()
+
+if __name__ == "__main__":
     app.run(debug=True)
