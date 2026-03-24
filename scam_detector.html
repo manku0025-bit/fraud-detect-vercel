@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scam Message Detector</title>
+
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>💬 Scam Message Detector</h1>
+
+<form action="/scan_message" method="POST">
+
+<textarea name="message" placeholder="Paste SMS or WhatsApp message..." required></textarea>
+
+<br>
+
+<button type="submit">Scan Message</button>
+
+</form>
+
+{% if result %}
+<div class="result">
+{{ result }}
+</div>
+{% endif %}
+
+</div>
+
+</body>
+</html>

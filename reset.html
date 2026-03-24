@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reset Password</title>
+</head>
+<body>
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+<h2>Reset Password</h2>
+
+<form method="post">
+<input type="text" name="otp" placeholder="Enter OTP" required>
+<input type="password" name="password" placeholder="New password" required>
+<button>Reset Password</button>
+</form>
+
+{% for msg in get_flashed_messages() %}
+<p style="color:red">{{msg}}</p>
+{% endfor %}
+
+</body>
+</html>

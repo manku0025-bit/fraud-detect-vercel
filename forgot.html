@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forgot Password</title>
+</head>
+<body>
+
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+<h2>Forgot Password</h2>
+
+<form method="post">
+<input type="email" name="email" placeholder="Enter registered email" required>
+<button>Send OTP</button>
+</form>
+
+{% for msg in get_flashed_messages() %}
+<p style="color:red">{{msg}}</p>
+{% endfor %}
+
+<a href="{{ url_for('login') }}">Back to login</a>
+
+
+</body>
+</html>

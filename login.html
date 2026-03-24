@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Login</h2>
+
+<form method="POST">
+
+<input name="email" placeholder="Email">
+
+<input name="password" type="password" placeholder="Password">
+
+<button>Login</button>
+
+</form>
+
+<a href="/register">Create Account</a>
+
+<br>
+
+<a href="{{ url_for('forgot_password') }}">Forgot Password</a>
+
+
+{% for msg in get_flashed_messages() %}
+<p>{{msg}}</p>
+{% endfor %}
+
+</div>
+
+</body>
+</html>

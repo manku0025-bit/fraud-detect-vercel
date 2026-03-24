@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="box">
+
+    <h2>Register</h2>
+
+    <form method="POST">
+
+        <input name="fullname" placeholder="Full Name" required>
+
+        <input name="email" placeholder="Email" type="email" required>
+
+        <input name="mobile" type="tel" placeholder="Mobile"
+        pattern="[0-9]{10}" title="Enter 10 digit mobile number" required>
+
+        <input name="password" type="password" placeholder="Password" required>
+
+        <!-- ✅ Added confirm password -->
+        <input name="confirm" type="password" placeholder="Confirm Password" required>
+
+        <button type="submit">Register</button>
+        <a href="{{ url_for('login') }}">Login</a> 
+        {% for msg in get_flashed_messages() %}
+<p>{{msg}}</p>
+{% endfor %}
+
+    </form>
+
+</div>
+
+</body>
+</html>

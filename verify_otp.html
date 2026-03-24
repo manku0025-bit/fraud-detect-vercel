@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify OTP</title>
+</head>
+<body>
+
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+<div class="box">
+<h2>Enter OTP</h2>
+<form method="post">
+<input name="otp" placeholder="OTP">
+<button>Verify</button>
+</form>
+</div>
+
+{% for msg in get_flashed_messages() %}
+<p style="color:red">{{msg}}</p>
+{% endfor %}
+
+</body>
+</html>
