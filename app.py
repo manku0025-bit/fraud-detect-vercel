@@ -13,11 +13,6 @@ app = Flask(__name__)
 app.secret_key = "fraud_ai_secret"
 
 # ===============================
-# 🔥 TESSERACT PATH
-# ===============================
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-
-# ===============================
 # 🔥 LOAD FRAUD MODELS
 # ===============================
 model_files = [
