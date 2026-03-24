@@ -9,3 +9,4 @@ gunicorn
 opencv-python
 pytesseract
 werkzeug
+scikit-learn==1.7.1
